@@ -1,1 +1,0 @@
-import{$ as l,o as n,e as r,s as p,a5 as u,c as d,a8 as e}from"./DIRbsWBy.js";const m={base:"bg-muted"},h={__name:"ProseThead",props:{class:{type:null,required:!1}},setup(s){const a=s,t=l(),o=d(()=>e({extend:e(m),...t.ui?.prose?.thead||{}}));return(c,i)=>(n(),r("thead",{class:u(o.value({class:a.class}))},[p(c.$slots,"default")],2))}};export{h as default};

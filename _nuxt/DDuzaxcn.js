@@ -1,1 +1,0 @@
-import{$ as c,o as n,e as l,s as p,a5 as m,c as u,a8 as s}from"./DIRbsWBy.js";const i={base:""},_={__name:"ProseEm",props:{class:{type:String,required:!1}},setup(e){const a=e,o=c(),t=u(()=>s({extend:s(i),...o.ui?.prose?.em||{}}));return(r,f)=>(n(),l("em",{class:m(t.value({class:a.class}))},[p(r.$slots,"default")],2))}};export{_ as default};

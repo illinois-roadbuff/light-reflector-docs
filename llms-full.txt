@@ -143,7 +143,35 @@ local function CheckForRegLightValue(car:Model)
 end
 ```
 
-```lua [vehicle-handler.client.luau]
+```lua [hi.lua]
+local function CheckForRegLightValue(car:Model)
+    local Body = car.Body
+    local Headlight = Body:FindFirstChild("Headlight")
+
+    if Headlight then
+        return Headlight.on -- Smeers light handler compatiblity
+    end
+
+    -- split since some A-Chassis cars apparently may not have a Vehicle seat once initialized, erroring the entire function
+    local DriveSeat = car:FindFirstChildOfClass("VehicleSeat")
+
+    assert(DriveSeat, `:: LightReflectorHandler :: Failed to find VehicleSeat in {car.Name}; halting execution. Please investigate!`)
+
+    local LightValues = DriveSeat:FindFirstChild("LightValues")
+    local Lights = if DriveSeat:FindFirstChild("Values") then DriveSeat.Values:FindFirstChild("Lights") else nil
+
+    if LightValues and LightValues:FindFirstChild("LB") then
+        return LightValues.LB -- Aura Deios compatibility
+    elseif Lights and Lights:FindFirstChild("LightStage") then
+        return Lights.LightStage -- Saragati Lagrande EXC compatibility
+    else
+        warn(`:: LightReflectorHandler :: Failed to find headlight values for car {car.Name}, resorting to boolean "true"`)
+        return true
+    end
+end
+```
+
+```luau
 local function CheckForRegLightValue(car:Model)
     local Body = car.Body
     local Headlight = Body:FindFirstChild("Headlight")

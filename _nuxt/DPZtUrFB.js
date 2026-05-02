@@ -1,1 +1,0 @@
-import{$ as r,o as c,e as n,s as p,a5 as u,c as m,a8 as s}from"./DIRbsWBy.js";const i={base:"list-decimal ps-6 my-5 marker:text-muted"},_={__name:"ProseOl",props:{class:{type:null,required:!1}},setup(e){const a=e,t=r(),o=m(()=>s({extend:s(i),...t.ui?.prose?.ol||{}}));return(l,d)=>(c(),n("ol",{class:u(o.value({class:a.class}))},[p(l.$slots,"default")],2))}};export{_ as default};
