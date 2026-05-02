@@ -1,80 +1,7 @@
-# Introduction
-
-Light Reflector is a `luau` vehicle-based light reflector system that reflects `Decal` and `BasePart` reflectors at long distances on roads.
-
-![Diagram](https://codeberg.org/project-roadwork/light-reflector/raw/branch/main/assets/images/light_reflector_systems.png)
-
-## Issues
-
-1. **Broken Wally and Pesde packages, with mismatched versioning**
-   - The Pesde package has version issues as well due to my custom pre-release tag `infdev`
-2. **Rojo may not work correctly?**
-3. **Possible BasePart memory leak on games with Instance Streaming**
-4. **Many `:GetAttribute` calls popping up in the Microprofiler**
-5. **No external documentation**
-6. **Some signs and reflectors may not work at all in very rare occasions**
-
-## Global features
-
-1. Adaptive waiting on performance-critical functions
-2. Distance fall-off
-3. Angle-based brightness
-4. Multi-vehicle support
-5. Non-tweened fading/transitions for gradual brightness
-6. Option to use `Tags` with `CollectionService`
-
-## Sign/Gantry System Features
-
-1. Utilizes `SurfaceGuis` and `ImageLabel` for reflectivity
-2. Uses `.ImageTransparency`, `.Brightness`, and `.LightInfluence`
-3. SurfaceGui pooling to increase performance
-4. Automatic sign `:Dot`support
-   - This determines if the vehicle is facing the sign or not to determine reflectiveness
-5. Automatic part rotation for `Top`faces
-   - Part rotation is needed since the orientation of images in `Decals` and `SurfaceGuis` are NOT the same
-   - This may break the visuals of actual non-square parts due to rotations
-6. Best for large reflective highway signs on gantries
-
-## Reflector System Features
-
-1. Utilizes `BaseParts` for reflectivity
-2. Uses `.Color` and `.Material`
-3. Wedge `:Dot` support, with face (`Enum.NormalId`) selection on non-wedges
-   - This determines if the vehicle is facing the part or not to determine reflectiveness
-4. Best for pavement reflectors on the road
-
-### Hybrid System Features
-
-1. Works alongside the Reflector System with no separate loop needed
-2. Uses `.Color`, `.Material`, AND `.Transparency` with similar equations to the Sign/Gantry System
-3. Face (`Enum.NormalId`) selection
-4. Best for reflective traffic light shields, non-decal signs, etc.
-
-
-# Installation
-
-::steps
-### Installing via Codeberg Releases
-
-Head over to releases and download the `.rbxm` file from the latest version on [Codeberg](https://codeberg.org/project-roadwork/light-reflector/releases){rel=""nofollow""}.
-**It's recommended to place the module under `ReplicatedStorage`, however you may place it wherever you'd like.**
-
-  :::warning
-  A package is available in Wally and Pesde; however, they are broken at the moment and should not be used in production.
-
-  :::
-
-### Inserting into Roblox Studio
-
-Right click `ReplicatedStorage` in the explorer, then press `Insert Roblox model` and insert `.rbxm` file you downloaded from Codeberg into Roblox Studio.
-
-### You are good to go! Check out usage examples!
-::
-
-
 # Setting Up the Client
 
-::steps{level="2"}
+<steps level="2">
+
 ## Setting up
 
 To use Light Reflector, require it in your script. Then change any configuration variables and start the system.
@@ -190,11 +117,13 @@ workspace.Cars.ChildRemoved:Connect(function(car)
     end
 end)
 ```
-::
+
+</steps>
 
 # Setting Up Tags & Attributes (Server)
 
-::steps{level="2"}
+<steps level="2">
+
 ## Reflector Tags
 
 To set up reflector tags, add a `Reflector` tag to the specified `BasePart` through the explorer or by script.
@@ -233,7 +162,7 @@ part:SetAttribute("HybridMinDistance", 50) -- config.ReflectorConfig.hybridMinDi
 part:SetAttribute("HybridMaxDistance",1600 -- config.ReflectorConfig.hybridMaxDistanceAttribute
 part:SetAttribute("CanHybridKeepColors", true) -- config.ReflectorConfig.hybridKeepColorsAttribute
 part:SetAttribute("HybridTransparencyMultiplier", 2) -- defaultHybridTransparencyMultiplier
-part:SetAttribute("HybridCanKeepTextures", true) -- config.ReflectorConfig.canHybridKeepTexturesAttribute 
+part:SetAttribute("HybridCanKeepTextures", true) -- config.ReflectorConfig.canHybridKeepTexturesAttribute
 ```
 
 ## Sign Tags
@@ -249,10 +178,13 @@ CollectionService:AddTag(part, config.SignConfig.TagName)
 ```
 
 The main `Decal` represents the reflective face, so setting up `Face` attributes is not neccesary.
-::
 
-This is only a basic example of what you can achieve with [Nuxt UI](https://ui.nuxt.com){rel="&#x22;nofollow&#x22;"}, you can tweak it to match your needs. The template uses several Nuxt modules underneath like [`@nuxt/content`](https://content.nuxt.com){rel="&#x22;nofollow&#x22;"} for the content and [`nuxt-og-image`](https://nuxtseo.com/og-image/getting-started/installation){rel="&#x22;nofollow&#x22;"} for social previews.
+</steps>
 
-::tip{target="_blank" to="https://ui.nuxt.com/getting-started/installation"}
+This is only a basic example of what you can achieve with [Nuxt UI](https://ui.nuxt.com), you can tweak it to match your needs. The template uses several Nuxt modules underneath like [`@nuxt/content`](https://content.nuxt.com) for the content and [`nuxt-og-image`](https://nuxtseo.com/og-image/getting-started/installation) for social previews.
+
+<tip target="_blank" to="https://ui.nuxt.com/getting-started/installation">
+
 Learn more on how to take the most out of Nuxt UI!
-::
+
+</tip>

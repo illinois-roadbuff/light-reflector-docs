@@ -8,9 +8,9 @@
 
 ## Getting Started
 
-- [Introduction](https://docs-template.nuxt.dev/getting-started): Welcome to the Light Reflector documentation.
-- [Installation](https://docs-template.nuxt.dev/getting-started/installation): Get started with Nuxt UI documentation template.
-- [Usage](https://docs-template.nuxt.dev/getting-started/usage): Learn how to use Light Reflector.
+- [Introduction](https://docs-template.nuxt.dev/raw/getting-started.md): Welcome to the Light Reflector documentation.
+- [Installation](https://docs-template.nuxt.dev/raw/getting-started/installation.md): Get started with Nuxt UI documentation template.
+- [Usage](https://docs-template.nuxt.dev/raw/getting-started/usage.md): Learn how to use Light Reflector.
 
 ## Essentials
 
