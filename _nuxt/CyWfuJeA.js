@@ -1,1 +1,0 @@
-import{$ as r,c,a3 as s,e as l,o as p,x as u,a6 as i}from"./DCdGjSCs.js";const m={base:""},g={__name:"ProseStrong",props:{class:{type:null,required:!1}},setup(e){const a=e,o=r(),t=c(()=>s({extend:s(m),...o.ui?.prose?.strong||{}}));return(n,f)=>(p(),l("strong",{class:i(t.value({class:a.class}))},[u(n.$slots,"default")],2))}};export{g as default};

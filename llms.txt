@@ -14,7 +14,3 @@
 
 ## Essentials
 
-- [Markdown Syntax](https://docs-template.nuxt.dev/essentials/markdown-syntax): Text, title, and styling in standard markdown.
-- [Code Blocks](https://docs-template.nuxt.dev/essentials/code-blocks): Display inline code and code blocks
-- [Prose Components](https://docs-template.nuxt.dev/essentials/prose-components): Components to help you structure your content.
-- [Images and Embeds](https://docs-template.nuxt.dev/essentials/images-embeds): Add image, video, and other HTML elements
