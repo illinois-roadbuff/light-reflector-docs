@@ -26,7 +26,8 @@ export default defineNuxtConfig({
       },
     },
     highlight: {
-      languages: ["json", "js", "ts", "html", "css", "luau"],
+      theme: "dracula",
+      preload: ["lua", "luau", "sh"],
     },
   },
 
